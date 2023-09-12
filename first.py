@@ -32,9 +32,12 @@
 #         print('start method __init__ for ' + str(self))
 #         self.x = x
 #         self.y = y
+#     def point_print(self):
+#         print(self.x)
 #
-# pt = Point(1, 2)
-# print(pt)
+#
+# pt = Point(1, 2).point_print()
+#
 
 
 # class DataBase:
@@ -85,6 +88,10 @@
 #         print(answer_str)
 #         break
 
+# Write a function to find the longest common prefix string amongst an array of strings.
+#
+# If there is no common prefix, return an empty string "".
+#
 class Solution(object):
     def longestCommonPrefix(self, strs):
         """
@@ -92,43 +99,32 @@ class Solution(object):
         :rtype: str
         """
         self.strs = strs
+        ansewer_str=''
+        if not str:
+            print(ansewer_str)
+            return ansewer_str
 
-        answer_str = ''
-        last_word = len(strs) - 2
+        min_len = min(len(i) for i in self.strs)
+        if min_len == 0:
+            print(ansewer_str)
+            return ansewer_str
 
-        word = 0
-        string = 0
-        a = True
-        min_str = 200
-        for i in self.strs:
-            if len(i) < min_str:
-                min_str = len(i)
-        if min_str == 0:
-            return ''
-
-        if self.strs == [""]:
-            return ''
         if len(self.strs) == 1:
-            return str(self.strs[0])
-        else:
-            while a == True:
-                if strs[word][string] == strs[word + 1][string] and word != last_word:
-                    word = +1
-                elif strs[word][string] == strs[word + 1][string] and word == last_word:
-                    if min_str == string + 1:
-                        answer_str += strs[word][string]
-                        return answer_str
+            print(self.strs[0])
+            return self.strs[0]
 
-                    elif min_str > string + 1:
-                        answer_str += strs[word][string]
-                        word = 0
-                        string += 1
-                    else:
-                        return answer_str
-                elif strs[word][string] != strs[word + 1][string]:
-                    return answer_str
-                    break
+        for i in range(0, min_len):
+            for j in self.strs:
+                if self.strs[0][i] != j[i]:
+                    print(ansewer_str)
+                    return ansewer_str
+            ansewer_str += self.strs[0][i]
+
+        print(ansewer_str)
+        return ansewer_str
 
 
 start = Solution()
-print(start.longestCommonPrefix(["flower","flower","flower","flower"]))
+# start.longestCommonPrefix(["flower","flow","flight"])
+start.longestCommonPrefix(["ab", "a"])
+
