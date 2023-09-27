@@ -85,25 +85,79 @@ from datetime import datetime
 #     print('finish')
 
 
-class Vector:
-    MIN_COORD = 0
-    MAX_COORD = 100
+# class Vector:
+#     MIN_COORD = 0
+#     MAX_COORD = 100
+#
+#     @classmethod
+#     def validat(cls, args):
+#         return cls.MIN_COORD <= args <= cls.MAX_COORD
+#
+#     def __init__(self, x, y):
+#         self.x = x
+#         self.y = y
+#
+#     def get_coord(self):
+#         print(self.x, self.y)
+#
+# vector = Vector(1, 2)
+# res = Vector.get_coord(vector)
+#
+# vector_2 = Vector(-1, 2)
+# res_2 =vector_2.get_coord()
+#
+# print(res, res_2)
 
-    @classmethod
-    def validat(cls, args):
-        return cls.MIN_COORD <= args <= cls.MAX_COORD
+# class Vector:
+#     a = 0
+#     b = 0
+#     @classmethod
+#     def validate(cls, args):
+#         return cls.a < args and cls.b < args
+#
+#     def __init__(self, x, y):
+#         self.x = self.y = 0
+#         if self.validate(x) and self.validate(y):
+#             self.x = x
+#             self.y = y
+#     def get_coor(self):
+#         return self.x, self.y
+#
+#
+# v = Vector(1, -1)
+# coord = v.get_coor()
+# print(coord)
+# Vector.a = 10
+# print(Vector.a)
+#
+# class Employee:
+#     number = 0
+#
+#     @classmethod
+#     def some_in(cls):
+#         cls.number += 1
+#         return cls.number
+#
+#     @classmethod
+#     def some_out(cls):
+#         cls.number -= 1
+#         if cls.number ==0:
+#             print('we can close')
+#         else:
+#             return cls.number
+#
+#
+#
+# start = Employee()
+# plus = start.some_in()
+# plus = start.some_in()
+# plus = start.some_in()
+# plus = start.some_in()
+# plus = start.some_out()
+# plus = start.some_out()
+# plus = start.some_out()
+# plus = start.some_out()
+#
+#
+# print(plus)
 
-    def __init__(self, x, y):
-        self.x = x
-        self.y = y
-
-    def get_coord(self):
-        print(self.x, self.y)
-
-vector = Vector(1, 2)
-res = Vector.get_coord(vector)
-
-vector_2 = Vector(-1, 2)
-res_2 =vector_2.get_coord()
-
-print(res, res_2)
