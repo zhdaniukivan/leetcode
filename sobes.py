@@ -169,52 +169,74 @@
 # print(next(i))
 # Эта строка уже вызывает ошибку, так ка мы вызываем элемент котого нет в списке# print(next(i))
 
-class Couter:
-    current: int
-
-    def __init__(self):
-        self.current = 0
-
-    def __iter__(self):
-        return self
-
-    def __next__(self):
-        current = self.current
-        self.current += 1
-        return current
-
-c = Couter()
-i = iter(c)
-print(next(i))
-print(next(i))
-print(next(i))
-print(next(i))
-print(next(i))
-print(next(i))
-
-# for i in c:
+# class Couter:
+#     current: int
+#
+#     def __init__(self):
+#         self.current = 0
+#
+#     def __iter__(self):
+#         return self
+#
+#     def __next__(self):
+#         current = self.current
+#         self.current += 1
+#         return current
+#
+# c = Couter()
+# i = iter(c)
+# print(next(i))
+# print(next(i))
+# print(next(i))
+# print(next(i))
+# print(next(i))
+# print(next(i))
+#
+# # for i in c:
+# #     print(i)
+#
+#
+# def some():
+#     yield 1
+#
+# b = some()
+# print(next(b))
+#
+#
+# try:
+#     b = some()
+#     print(next(b))
+#     print(next(b))
+# except:
+#     print('1111')
+# finally:
+#     print('func is stopped')
+# a = []
+# if len(a)== 0:
+#     print('stop')
+# for i in a:
 #     print(i)
 
-
-def some():
-    yield 1
-
-b = some()
-print(next(b))
-
-
-try:
-    b = some()
-    print(next(b))
-    print(next(b))
-except:
-    print('1111')
-finally:
-    print('func is stopped')
+class Cat:
+    breed = 'british'
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
 
 
 
-    
+    def hellow(*args):
+        print('Hi in class cat', args)
+
+    def show_breed(self):
+        print(f'my cat is {self.breed}')
+
+    def check_the_name(self):
+        if hasattr(self):
+            print(f'that cat has name {self.name}')
+        else:
+            print('that cat have no name')
+
 
 
 
