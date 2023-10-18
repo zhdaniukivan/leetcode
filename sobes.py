@@ -217,25 +217,126 @@
 # for i in a:
 #     print(i)
 
-class Cat:
-    breed = 'british'
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
+# class Cat:
+#     breed = 'british'
+#     def __init__(self, name='cat', age=35):
+#         self.name = name
+#         self.age = age
+#
+#
+#     def hellow(*args):
+#         print('Hi in class cat', args)
+#
+#     def show_breed(self):
+#         print(f'my cat is {self.breed}')
+#
+#     def check_the_name(self):
+#         if hasattr(self):
+#             print(f'that cat has name {self.name}')
+#         else:
+#             print('that cat have no name')
+#
+#
+
+# class Dog():
+#     def __init__(self, name, age):
+#         self.name = name
+#         self.age = age
+#
+#     def description(self):
+#         print(f'{self.name} is {self.age} years old')
+#
+#     def speake(self):
+#         print(f'{self.name} say gav')
+#
+# a = Dog('bob', 32)
+# a.description()
+# a.speake()
+
+# mono sostoyanie
+# class BestCar():
+#     __shared_dict = {
+#         'marks': 'reno',
+#         'age': 5
+#     }
+#
+#     def __init__(self):
+#         self.__dict__ = self.__shared_dict
+
+#
+# class BankAccount():
+#
+#     def __init__(self, name, check,  balance):
+#         self.__name = name
+#         self.__check = check
+#         self.__balance = balance
+#
+#     # def print_data(self):
+#     #     return self.name, self.balance, self.check
+#
+#     def print_data(self):
+#         return self.__name, self.__balance, self.__check
+#
+# bob = BankAccount('bob', 'dfsdfdff2655465465gfgfg10000', 10000)
+# print(bob.print_data())
+# print(bob.__dict__)
+#
+# class Universuti():
+#
+#     def __init__(self, name, age, branch):
+#         self.name = name
+#         self.age = age
+#         self.branch = branch
+#
+#     def __print_data(self):
+#         return self.name, self.age, self.branch
+#
+#     def acsees_to_priver_method(self):
+#         return self.__print_data()
+#
+# bob = Universuti('bob', 35, 'PGS')
+# print(bob.acsees_to_priver_method())
+
+#
+# class BancAccount():
+#
+#     def __init__(self, name, balance):
+#         self.__name = name
+#         self.__balance = balance
+#
+#     def get_balance(self):
+#         return self.__balance
+#
+#     def set_balance(self, value):
+#         self.__balance = value
+#
+# bob = BancAccount('Bob', 1000)
+# print(bob.get_balance())
+# print(bob.set_balance(2000))
+# print(bob.get_balance())
+
+class Rectangle():
+
+    def __init__(self, a, b):
+        self.a = a
+        self.b = b
+
+
+    @property
+    def area(self):
+        return self.a * self.b
+
+r1 = Rectangle(3, 5)
+r2 = Rectangle(6, 1)
+
+print(r1.area)
+print(r2.area)
 
 
 
-    def hellow(*args):
-        print('Hi in class cat', args)
 
-    def show_breed(self):
-        print(f'my cat is {self.breed}')
 
-    def check_the_name(self):
-        if hasattr(self):
-            print(f'that cat has name {self.name}')
-        else:
-            print('that cat have no name')
+
 
 
 
