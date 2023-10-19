@@ -315,25 +315,124 @@
 # print(bob.set_balance(2000))
 # print(bob.get_balance())
 
-class Rectangle():
+# class Rectangle():
+#
+#     def __init__(self, a, b):
+#         self.a = a
+#         self.b = b
+#
+#
+#     @property
+#     def area(self):
+#         return self.a * self.b
+#
+# r1 = Rectangle(3, 5)
+# r2 = Rectangle(6, 1)
+#
+# print(r1.area)
+# print(r2.area)
 
+# class FoundLostInt():
+#
+#     __shared_dict = {
+#         'same_int': 5,
+#     }
+#
+#     def __init__(self):
+#         self.__dict__ = self.__shared_dict
+#
+#     @staticmethod
+#     def say_hellow():
+#         print('Hi, the game is began')
+#
+# FoundLostInt.say_hellow()
+# a = FoundLostInt()
+# a.say_hellow()
+
+# class StaticClass:
+#
+#     @staticmethod
+#     def print_same_start():
+#         return "start"
+#
+#
+# print(StaticClass.print_same_start())
+#
+# b = StaticClass()
+# print(b.print_same_start())
+
+# class SameClass():
+#     @staticmethod
+#     def print_same_text():
+#         print("I'm onli func, I cant use clas menthod and atribut")
+#
+#
+# class SameClasseMethod():
+#     a = 10
+#
+#     @classmethod
+#     def minus_int_same(cls):
+#         cls.a -= 1
+#         return cls.a
+#
+#
+# bob = SameClasseMethod()
+# print(bob.minus_int_same())
+# print(SameClasseMethod.minus_int_same())
+# sandy = SameClasseMethod()
+# print(sandy.minus_int_same())
+
+# class Lion:
+#     def __init__(self, name):
+#         self.name = name
+#
+#     def __repr__(self):
+#         return f'The object Lion - {self.name}'
+#
+#
+#     def __str__(self):
+#         return self.name
+#
+# class UserInside():
+#     def __init__(self, name, surname):
+#         self.name = name
+#         self.surname = surname
+#
+#     def __len__(self):
+#         return len(self.name+self.surname)
+#
+# class Otrezok:
+#     def __init__(self, start, finish):
+#         self.start = start
+#         self.finish = finish
+#
+#     def __len__(self):
+#         return abs(self)
+#
+#     def __abs__(self):
+#         return abs(self.finish - self.start)
+#
+#
+# class Vector:
+#
+#     def __init__(self, *args):
+#         print(args)
+class Rectangle:
     def __init__(self, a, b):
         self.a = a
         self.b = b
 
+    def __eq__(self, other):
+        if isinstance(other, Rectangle):
+            return self.a == other.a and self.b == other.b
 
     @property
     def area(self):
-        return self.a * self.b
+        return 0.5 * self.a * self.b
 
-r1 = Rectangle(3, 5)
-r2 = Rectangle(6, 1)
-
-print(r1.area)
-print(r2.area)
-
-
-
+    def __lt__(self, other):
+        if isinstance(other, Rectangle):
+            return self.area < other.area
 
 
 
