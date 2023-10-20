@@ -1,4 +1,7 @@
 # import copy
+from time import perf_counter
+import time
+from datetime import datetime
 #
 #
 # a = [i for i in range(5) if i % 2 == 0]
@@ -89,6 +92,8 @@
 #         return datetime.now()
 #
 # print(A.get_current_datetime())
+
+
 
 # from datetime import datetime
 # a = (i for i in range(10000))
@@ -417,26 +422,145 @@
 #
 #     def __init__(self, *args):
 #         print(args)
-class Rectangle:
-    def __init__(self, a, b):
-        self.a = a
-        self.b = b
+# class Rectangle:
+#     def __init__(self, a, b):
+#         self.a = a
+#         self.b = b
+#
+#     def __eq__(self, other):
+#         if isinstance(other, Rectangle):
+#             return self.a == other.a and self.b == other.b
+#
+#     @property
+#     def area(self):
+#         return 0.5 * self.a * self.b
+#
+#     def __lt__(self, other):
+#         if isinstance(other, Rectangle):
+#             return self.area < other.area
+#
+#
+# class Counter:
+#
+#     def __init__(self):
+#         self.counter = 0
+#
+#         print('init object')
+#
+#     def __call__(self, *args, **kwargs):
+#         self.counter += 1
+#         print(f'we start method coll: {self.counter} times')
+#
+#
+# class Timer:
+#
+#     def __init__(self, func):
+#         self.func = func
+#
+#     def __call__(self, *args, **kwargs):
+#         start = time.perf_counter()
+#         print(f'start func {self.func.__name__}')
+#         result = self.func(*args, **kwargs)
+#         finish = time.perf_counter()
+#         print(f'time work {finish - start}')
+#         return result
+#
+#
+# @Timer
+# def fact(n):
+#     pr = 1
+#     for i in range(1, n + 1):
+#         pr *= 1
+#     return pr
+#
+#
+#
+# def fib(n):
+#     if n <= 2:
+#         return 1
+#     return fib(n-1) + fib(n-2)
+#
+# fact(7)
+# bob = Timer(fib)(7)
 
-    def __eq__(self, other):
-        if isinstance(other, Rectangle):
-            return self.a == other.a and self.b == other.b
+# class Robot:
+#     populations = 0
+#
+#     def __init__(self, name):
+#         self.name = name
+#         self.add_new_robot()
+#         print(f'робот {self.name} бы создан')
+#
+#     @classmethod
+#     def add_new_robot(cls):
+#         cls.populations += 1
+#
+#     # @classmethod
+#     # def destroy(cls):
+#     #     cls.populations -= 1
+#     #     print()
+#
+#     @classmethod
+#     def how_many(cls):
+#         print(cls.populations)
+#
+#
+# bob = Robot('bob')
+# bob.how_many()
+# Robot.how_many()
+# sandy = Robot('sandy')
+# bob.how_many()
+# Robot.how_many()
+# sandy.how_many()
 
-    @property
-    def area(self):
-        return 0.5 * self.a * self.b
 
-    def __lt__(self, other):
-        if isinstance(other, Rectangle):
-            return self.area < other.area
+# class Square:
+#     def __init__(self, a):
+#         self.a = a
+#
+#     def area(self):
+#         return self.a ** 2
+#
+# class Circle:
+#
+#     def __init__(self, r):
+#         self.r = r
+#
+#     def area(self):
+#         return self.r ** 2 * 3.14
+#
+# class Triangle:
+#
+#     def __init__(self, a, b):
+#         self.a = a
+#         self.b = b
+#
+#     def area(self):
+#         return 0.5 * self.a * self.b
+#
+# sq1 = Square(2)
+# sq2 = Square(3)
+# ce1 = Circle(4)
+# ce2 = Circle(4)
+# tr1 = Triangle(1, 2)
+# tr2 = Triangle(7, 2)
+#
+# a = [sq1, sq2, ce2, ce1, tr1, tr2]
+#
+# for i in a:
+#     print(i.area())
 
 
+class Ctudent:
+
+    def __init__(self, name, surname, marks):
+        self.name = name
+        self.surname = surname
+        self.marks = marks
 
 
-
-
+bob = Ctudent('bob', 'Ivanov', [1, 2, 3, 4, 5])
+print(bob.marks)
+for i in bob.marks:
+    print(i)
 

@@ -1,23 +1,22 @@
-# class Point:
-#     'class dlay opredeleniya coordinat'
-#     color = 'red'
-#     circle = 2
-#
-#     def __init__(self, a=0, b=0):
-#         self.x = a
-#         self.y = b
-#
-#     def __del__(self):
-#         print('delete pt' + str(self))
-#
-#
-#     def set_coords(self, x, y):
-#         self.x = x
-#         self.y = y
-#
-#     def get_coords(self):
-#         return (self.x, self.y)
-#
+class Point:
+    'class dlay opredeleniya coordinat'
+    color = 'red'
+    circle = 2
+
+    def __init__(self, a=0, b=0):
+        self.x = a
+        self.y = b
+
+    def __del__(self):
+        print('delete pt' + str(self))
+
+    def set_coords(self, x, y):
+        self.x = x
+        self.y = y
+
+    def get_coords(self):
+        return (self.x, self.y)
+
 #
 # pt = Point()
 # # pt.set_coords(1, 2)
@@ -27,7 +26,6 @@
 #     def __new__(cls, *args, **kwargs):
 #         print('start method __new__ for ' + str(cls))
 #         return super().__new__(cls)
-#
 #     def __init__(self, x=0, y=0):
 #         print('start method __init__ for ' + str(self))
 #         self.x = x
@@ -127,4 +125,6 @@ class Solution(object):
 start = Solution()
 # start.longestCommonPrefix(["flower","flow","flight"])
 start.longestCommonPrefix(["ab", "a"])
+
+
 
