@@ -549,18 +549,38 @@ from datetime import datetime
 #
 # for i in a:
 #     print(i.area())
+#
+#
+# class Ctudent:
+#
+#     def __init__(self, name, surname, marks):
+#         self.name = name
+#         self.surname = surname
+#         self.marks = marks
+#
+#
+# bob = Ctudent('bob', 'Ivanov', [1, 2, 3, 4, 5])
+# print(bob.marks)
+# for i in bob.marks:
+#     print(i)
+b = [1, 2, 3]
+#
+# a = lambda x: x*3
+#
+# print(b*3)
+# new_list = filter(lambda x: (x%2 == 0), b)
+# print(list(new_list))
 
+new_list = list(map(lambda x: (x*2), b))
+print(new_list)
+b = [5, 15, 20, 30, 50, 55, 75, 60, 70]
+print(sum(b))
 
-class Ctudent:
+new_list = list(filter(lambda x: (x % 2), b))
+print(new_list)
 
-    def __init__(self, name, surname, marks):
-        self.name = name
-        self.surname = surname
-        self.marks = marks
+new_list = list(filter(lambda x: (x // 2), b))
+print(new_list)
 
-
-bob = Ctudent('bob', 'Ivanov', [1, 2, 3, 4, 5])
-print(bob.marks)
-for i in bob.marks:
-    print(i)
-
+double = lambda x: x*2
+print((double(18)))
