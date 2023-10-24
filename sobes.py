@@ -563,24 +563,90 @@ from datetime import datetime
 # print(bob.marks)
 # for i in bob.marks:
 #     print(i)
-b = [1, 2, 3]
+# b = [1, 2, 3]
+# #
+# # a = lambda x: x*3
+# #
+# # print(b*3)
+# # new_list = filter(lambda x: (x%2 == 0), b)
+# # print(list(new_list))
 #
-# a = lambda x: x*3
+# new_list = list(map(lambda x: (x*2), b))
+# print(new_list)
+# b = [5, 15, 20, 30, 50, 55, 75, 60, 70]
+# print(sum(b))
 #
-# print(b*3)
-# new_list = filter(lambda x: (x%2 == 0), b)
-# print(list(new_list))
+# new_list = list(filter(lambda x: (x % 2), b))
+# print(new_list)
+#
+# new_list = list(filter(lambda x: (x // 2), b))
+# print(new_list)
+#
+# double = lambda x: x*2
+# print((double(18)))
+#
 
-new_list = list(map(lambda x: (x*2), b))
-print(new_list)
-b = [5, 15, 20, 30, 50, 55, 75, 60, 70]
-print(sum(b))
+# class Vector:
+#
+#     def __init__(self, *args):
+#         self.values = list(args)
+#
+#     def __repr__(self):
+#         return str(self.values)
+#
+#     def __getitem__(self, item):
+#         if 0 <= item < len(self.values):
+#             return self.values[item]
+#         else:
+#             return 'Item go out from list'
 
-new_list = list(filter(lambda x: (x % 2), b))
-print(new_list)
 
-new_list = list(filter(lambda x: (x // 2), b))
-print(new_list)
+# v3 = Vector(3, 4, 5, 2, 3)
+# print(v3.__getitem__(0))
 
-double = lambda x: x*2
-print((double(18)))
+class Stydents:
+
+    def __init__(self, name, marks):
+        self.name = name
+        self.marks = marks
+
+    def __iter__(self):
+        self.index = 0
+        return iter(self.name)
+
+    def __next__(self):
+        if self.index >= len(self.marks-1 ):
+            raise StopIteration
+
+        letter = self.marks[self.index]
+        self.index += 1
+        return letter
+
+
+
+bob = Stydents('bob', [1, 2, 3, 4, 5, 6])
+for i in bob:
+    print(i)
+
+
+print('start new class')
+class Marks:
+
+    def __init__(self, value):
+        self.value = value
+        self.index = 0
+
+    def __iter__(self):
+        return iter(self.value)
+
+    def __next__(self):
+        if self.index >= len(self.value - 1):
+            raise StopIteration
+
+        letter = self.value[self.index]
+        self.index += 1
+        return letter
+
+bobi = Marks([1, 2, 3, 5, 6])
+for i in bobi:
+    print(i)
