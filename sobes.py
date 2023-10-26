@@ -604,49 +604,57 @@ from datetime import datetime
 # v3 = Vector(3, 4, 5, 2, 3)
 # print(v3.__getitem__(0))
 
-class Stydents:
+# class Stydents:
+#
+#     def __init__(self, name, marks):
+#         self.name = name
+#         self.marks = marks
+#
+#     def __iter__(self):
+#         self.index = 0
+#         return iter(self.name)
+#
+#     def __next__(self):
+#         if self.index >= len(self.marks-1 ):
+#             raise StopIteration
+#
+#         letter = self.marks[self.index]
+#         self.index += 1
+#         return letter
+#
+#
+#
+# bob = Stydents('bob', [1, 2, 3, 4, 5, 6])
+# for i in bob:
+#     print(i)
+#
+#
+# print('start new class')
+# class Marks:
+#
+#     def __init__(self, value):
+#         self.value = value
+#         self.index = 0
+#
+#     def __iter__(self):
+#         return iter(self.value)
+#
+#     def __next__(self):
+#         if self.index >= len(self.value - 1):
+#             raise StopIteration
+#
+#         letter = self.value[self.index]
+#         self.index += 1
+#         return letter
+#
+# bobi = Marks([1, 2, 3, 5, 6])
+# for i in bobi:
+#     print(i)
+#
 
-    def __init__(self, name, marks):
-        self.name = name
-        self.marks = marks
+x = [0.1]* 10
+print(x)
+print(sum(x))
 
-    def __iter__(self):
-        self.index = 0
-        return iter(self.name)
-
-    def __next__(self):
-        if self.index >= len(self.marks-1 ):
-            raise StopIteration
-
-        letter = self.marks[self.index]
-        self.index += 1
-        return letter
-
-
-
-bob = Stydents('bob', [1, 2, 3, 4, 5, 6])
-for i in bob:
-    print(i)
-
-
-print('start new class')
-class Marks:
-
-    def __init__(self, value):
-        self.value = value
-        self.index = 0
-
-    def __iter__(self):
-        return iter(self.value)
-
-    def __next__(self):
-        if self.index >= len(self.value - 1):
-            raise StopIteration
-
-        letter = self.value[self.index]
-        self.index += 1
-        return letter
-
-bobi = Marks([1, 2, 3, 5, 6])
-for i in bobi:
-    print(i)
+x = 1e10
+print(x)
