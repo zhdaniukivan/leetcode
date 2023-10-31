@@ -1,0 +1,92 @@
+#
+#
+#
+# # def biggest_dict(**kwargs):
+# #     my_dict = {"first_one": "we can do it"}  # Исходный словарь
+# #     my_dict.update(kwargs)  # Обновление словаря данными из параметров
+# #     return my_dict
+# #
+# # # Пример использования функции
+# # result_dict = biggest_dict(second_key="second_value", third_key="third_value")
+# # print(result_dict)
+#
+# def to_dict(user_list: list) -> dict:
+#     ''' Эта функция принимает список и возвращает словарь
+#     где в качестве ключей и значений взяты элементы переданного списка.'''
+#     user_dict = {}  # создаем словарь для добавления данных
+#     if not user_list:  # проверяем передан ли список в функцию и не пустой ли он
+#         return {}  # возвращаем пустой словарь когда нам передан пустой список
+#     for i in user_list:  # перебираем все элементы списка
+#         try:
+#             hash(i)  # если хеш функция проходит то мы можем использовать этот элемент в качестве ключа в словаре.
+#             user_dict[i] = i  # добавляем элемент в словарь
+#         except:
+#             # выводим те элементы списка которые не пооддерживают хеш функцию
+#             print(f'Элемент: {i} не подходит для использования в качестве ключа словаря!!!!!')
+#     return user_dict # возвращаем результирующий словарь
+#
+#
+# to_dict([])
+# print(to_dict([1, 2, 3, [22], 34, 55, 'sdassd']))
+
+
+import time
+
+# Пример функции, которая может вызывать исключение и запускаться она должна только три раза
+# def some_function():
+#     infinity = False
+#     if some_condition:
+#         raise Exception("Some error")
+#
+# # Пример функции, которая может вызывать исключение и запускаться она должна бесконечно
+# def some_infinity_function():
+#     infinity = True
+#     if some_condition:
+#         raise Exception("Some error")
+#
+# # Функция-обертка, которая повторяет вызов функции в случае исключения
+# def retry_function(func, max_retries=3):
+#     for attempt in range(max_retries):
+#         try:
+#             func()  # Вызываем исходную функцию
+#             break  # Если выполнение прошло успешно, выходим из цикла
+#         except Exception as e:
+#             print(f"Attempt {attempt + 1}: Caught an exception - {e}")
+#             time.sleep(1)  # Пауза между попытками
+#
+# # Пример вызова функции-обертки
+# retry_function(some_function, max_retries=3)
+
+
+
+import time
+
+# Пример функции, которая может вызывать исключение и запускаться она должна только три раза
+def some_function():
+    if some_condition:
+        raise Exception("Some error")
+
+# Пример функции, которая может вызывать исключение и запускаться она должна бесконечно
+def some_infinity_function():
+    if some_condition:
+        raise Exception("Some error")
+
+# Функция-обертка, которая повторяет вызов функции в случае исключения
+def retry_function(func, max_retries=3, infinity=False):
+    attempt = 0
+    while True:
+        try:
+            func()  # Вызываем исходную функцию
+            break  # Если выполнение прошло успешно, выходим из цикла
+        except Exception as e:
+            print(f"Attempt {attempt + 1}: Caught an exception - {e}")
+            attempt += 1
+            if not infinity and attempt >= max_retries:
+                break
+            time.sleep(1)  # Пауза между попытками
+
+# Пример вызова функции-обертки для some_function (3 попытки)
+retry_function(some_function, max_retries=3)
+
+# Пример вызова функции-обертки для some_infinity_function (бесконечные попытки)
+retry_function(some_infinity_function, infinity=True)
